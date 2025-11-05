@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { Analytics } from "@vercel/analytics/react"; // Add this import
 import { Navigation } from "./components/Navigation";
 import  HeroSection  from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
@@ -11,7 +12,6 @@ const SECTIONS = ["home", "about", "skills", "projects", "contact"];
 export default function App() {
   const [activeSection, setActiveSection] = useState("home");
 
-  // Scrollspy: update activeSection based on scroll position
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 3;
@@ -29,11 +29,10 @@ export default function App() {
       setActiveSection(current);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Navigation handler for smooth scroll
   const handleNavigate = useCallback((section: string) => {
     const elem = document.getElementById(section);
     if (elem) {
@@ -66,6 +65,8 @@ export default function App() {
           <ContactSection />
         </section>
       </main>
+
+      <Analytics /> {/* Add this here */}
     </div>
   );
 }

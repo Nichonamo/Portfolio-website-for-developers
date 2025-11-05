@@ -163,7 +163,7 @@ export default function HeroSection() {
           </p>
           <div className="flex gap-4">
             <button className="bg-gradient-to-r from-cyan-500 to-purple-500 px-6 py-3 text-white rounded-lg hover:scale-105 transition-transform">
-              View My Galaxy
+              Download my CV
             </button>
             <button className="border border-cyan-400 px-6 py-3 text-cyan-300 rounded-lg hover:bg-cyan-500/10 transition-all">
               Let's Collaborate
@@ -171,7 +171,7 @@ export default function HeroSection() {
           </div>
 
           <div className="grid grid-cols-3 gap-6 pt-8">
-            {[{ label: "Production Projects", value: "2+" }, { label: "Tech Stack Depth", value: "10+" }, { label: "Space UI Missions", value: "∞" }].map(
+            {[{ label: "Production Projects", value: "2+" }, { label: "Tech Stack Depth", value: "10+" }, { label: "Experience", value: "1+" }].map(
               (stat) => (
                 <div key={stat.label} className="text-center hover:scale-110 transition-transform duration-300">
                   <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">
