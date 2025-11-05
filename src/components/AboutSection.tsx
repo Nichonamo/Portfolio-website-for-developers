@@ -19,19 +19,19 @@ export function AboutSection() {
 
   /** Professional Stats */
   const stats = [
-    { label: "Years Experience", value: "5+", icon: "🚀" },
-    { label: "Galactic Projects", value: "50+", icon: "🌌" },
-    { label: "Technologies", value: "25+", icon: "⚡" },
-    { label: "Happy Clients", value: "30+", icon: "✨" },
+    { label: "Years Experience", value: "1+", icon: "🚀" },
+    { label: "My Projects", value: "2+", icon: "🌌" },
+    { label: "Technologies", value: "5+", icon: "⚡" },
+    { label: "tba", value: "#", icon: "✨" },
   ];
 
   /** Core Expertise Areas */
   const expertise = [
     {
       icon: "💻",
-      title: "Full Stack Developer",
+      title: "Front End Developer",
       description:
-        "Building end-to-end web applications with modern frameworks and databases.",
+        "Creating engaging user interfaces and interactive web experiences using modern frameworks and technologies.",
       gradient: "from-blue-500 to-cyan-500",
     },
     {

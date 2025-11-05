@@ -41,23 +41,23 @@ export function SkillsSection() {
   ];
 
   const experienceTimeline = [
-    {
-      role: 'Senior Frontend Developer',
-      company: 'Tech Innovations Inc.',
-      duration: '2022 - Present',
-      summary: 'Leading development of complex web applications using React and Three.js',
+    // {
+    //   role: 'Senior Frontend Developer',
+    //   company: 'Tech Innovations Inc.',
+    //   duration: '2022 - Present',
+    //   summary: 'Leading development of complex web applications using React and Three.js',
+    // },
+     {
+      role: 'Junior Developer',
+      company: 'PT DUA PULUH TIGA',
+      duration: 'Feb 2025 - Present',
+      summary: 'Contributed to multiple projects focusing on modern web technologies',
     },
     {
       role: 'Full Stack Developer',
-      company: 'Digital Solutions Ltd.',
-      duration: '2020 - 2022',
-      summary: 'Built scalable web applications and APIs for various client projects',
-    },
-    {
-      role: 'Junior Developer',
-      company: 'StartUp Studios',
-      duration: '2019 - 2020',
-      summary: 'Contributed to multiple projects focusing on modern web technologies',
+      company: 'Growtopia Private Server',
+      duration: '2019 - 2022',
+      summary: 'Built a growtopia sandbox game based private server',
     },
   ];
 
