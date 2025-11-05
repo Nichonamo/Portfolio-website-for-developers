@@ -19,17 +19,18 @@ function useStars(count: number = 120) {
 // --- TOOLKITS ---
 export function AnimatedToolkits() {
   const toolkits = [
-    { name: "React", icon: "https://img.icons8.com/fluency/96/react.png", color: "from-blue-400 to-cyan-400" },
-    { name: "Node.js", icon: "https://img.icons8.com/fluency/96/node-js.png", color: "from-green-400 to-emerald-400" },
+    { name: "React", icon: "https://img.icons8.com/?size=100&id=voJ15GoZniHZ&format=png&color=000000", color: "from-blue-400 to-cyan-400" },
+    { name: "JavaScript", icon: "https://img.icons8.com/?size=100&id=59925&format=png&color=000000", color: "from-green-400 to-emerald-400" },
     { name: "Python", icon: "https://img.icons8.com/fluency/96/python.png", color: "from-yellow-400 to-orange-400" },
     { name: "TypeScript", icon: "https://img.icons8.com/fluency/96/typescript.png", color: "from-blue-500 to-indigo-500" },
-    { name: "Docker", icon: "https://img.icons8.com/fluency/96/docker.png", color: "from-blue-400 to-blue-600" },
-    { name: "AWS", icon: "https://img.icons8.com/color/96/amazon-web-services.png", color: "from-orange-400 to-red-400" },
-    { name: "PostgreSQL", icon: "https://img.icons8.com/color/96/postgreesql.png", color: "from-blue-600 to-purple-600" },
+    { name: "C++", icon: "https://img.icons8.com/?size=200&id=2T6TKY6whzgV&format=png&color=000000", color: "from-blue-400 to-blue-600" },
+    { name: "C#", icon: "https://img.icons8.com/?size=100&id=Fycm8TUhWmFU&format=png&color=000000", color: "from-orange-400 to-red-400" },
+    { name: "Lua", icon: "https://img.icons8.com/?size=100&id=vFFJFfHoOHvj&format=png&color=000000", color: "from-blue-600 to-purple-600" },
     { name: "MongoDB", icon: "https://img.icons8.com/color/96/mongodb.png", color: "from-green-500 to-teal-500" },
-    { name: "GraphQL", icon: "https://img.icons8.com/color/96/graphql.png", color: "from-pink-400 to-purple-500" },
-    { name: "Kubernetes", icon: "https://img.icons8.com/fluency/96/kubernetes.png", color: "from-blue-500 to-cyan-500" },
+    { name: "TypeScript", icon: "https://img.icons8.com/fluency/96/typescript.png", color: "from-blue-500 to-indigo-500" },
+    { name: "Git", icon: "https://img.icons8.com/color/96/git.png", color: "from-red-400 to-pink-400" },
     { name: "TensorFlow", icon: "https://img.icons8.com/color/96/tensorflow.png", color: "from-orange-500 to-yellow-500" },
+    { name: "Kubernetes", icon: "https://img.icons8.com/fluency/96/kubernetes.png", color: "from-blue-500 to-cyan-500" },
     { name: "Git", icon: "https://img.icons8.com/color/96/git.png", color: "from-red-400 to-pink-400" },
   ];
 

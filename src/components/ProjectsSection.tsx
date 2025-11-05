@@ -20,39 +20,39 @@ export function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      title: 'Thirumathi Kart',
-      description: 'A women-focused e-commerce platform featuring dynamic cart, wishlist, seller integration, and a sleek React + Golang ecosystem.',
+      title: 'TrashIN App',
+      description: 'An app that encourages recycling by allowing users to exchange recyclable waste for rewards, featuring real-time tracking and user profiles.',
       image: '/images/thirumathi-kart.jpg',
-      technologies: ['React.js', 'TailwindCSS', 'Golang', 'PostgreSQL'],
-      liveUrl: 'https://thirumathikart.vercel.app', // or actual hosted URL
-      githubUrl: 'https://github.com/dhanasekar-m/thirumathi-kart'
+      technologies: ['React.js', 'HTML', 'CSS', 'PHP'],
+      liveUrl: 'https://trashin.vercel.app',
+      githubUrl: 'https://github.com/Mat554/SoftwareEngineerAOL'
     },
     {
       id: 2,
-      title: 'GoodFiction',
-      description: 'A story-sharing platform built for passionate writers, featuring JWT auth, story browsing, and profile personalization.',
+      title: 'Bodypack Relay',
+      description: 'A website for registering events for Bodypack Relay, featuring user authentication, event management, and real-time updates.',
       image: '/images/goodfiction.jpg',
-      technologies: ['React.js', 'Framer Motion', 'Golang', 'JWT', 'PostgreSQL'],
-      liveUrl: 'https://goodfiction.vercel.app',
-      githubUrl: 'https://github.com/dhanasekar-m/goodfiction'
+      technologies: ['React.js', 'TailwindCSS', 'HTML CSS', 'JWT', 'Midtrans'],
+      liveUrl: 'https://www.bodypack-relay.com/',
+      githubUrl: 'https://github.com/EriFerdian23/bodypack-relay'
     },
     {
       id: 3,
-      title: 'ML Salary Predictor',
-      description: 'A Machine Learning-based web app that predicts salary using user input and regression models, with detailed project report.',
+      title: 'EMACS',
+      description: 'Enteprise Management and Accounting System - A comprehensive web application for managing business operations, including accounting, inventory, and customer relations.',
       image: '/images/salary-predictor.jpg',
-      technologies: ['Python', 'Scikit-Learn', 'Flask', 'React.js'],
+      technologies: ['React.js', 'TailwindCSS', 'HTML CSS', 'JWT'],
       liveUrl: '#',
-      githubUrl: 'https://github.com/dhanasekar-m/ml-salary-predictor'
+      githubUrl: 'https://github.com/EriFerdian23/emacs-online'
     },
     {
       id: 4,
-      title: 'Narcotic Drug Detector',
-      description: 'A dual-mode system using iris scanning and environmental sensing to detect drug abuse, powered by IoT & ML.',
+      title: 'To be added soon...',
+      description: 'to be added soon...',
       image: '/images/narcotic-detector.jpg',
-      technologies: ['Python', 'OpenCV', 'ML Models', 'IoT', 'Flask'],
+      technologies: [],
       liveUrl: '#',
-      githubUrl: 'https://github.com/dhanasekar-m/narcotic-detector'
+      githubUrl: ''
     }
   ];
 

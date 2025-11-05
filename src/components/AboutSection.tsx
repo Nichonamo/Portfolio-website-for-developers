@@ -31,30 +31,31 @@ export function AboutSection() {
       icon: "💻",
       title: "Front End Developer",
       description:
-        "Creating engaging user interfaces and interactive web experiences using modern frameworks and technologies.",
+        "Building interactive and responsive web interfaces using modern technologies such as React and Tailwind CSS.",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
-      icon: "☁️",
-      title: "Cloud Support",
+      icon: "🧑‍💼",
+      title: "Software Engineer Freelance",
       description:
-        "Deploying and managing scalable applications on cloud platforms.",
+        "Assisting in system maintenance, troubleshooting issues, and ensuring smooth operation of both software and hardware within the organization.",
       gradient: "from-purple-500 to-pink-500",
     },
     {
-      icon: "⚙️",
-      title: "DevOps",
+      icon: "🧩",
+      title: "Software Engineer Intern",
       description:
-        "Streamlining development workflows with CI/CD and infrastructure automation.",
+        "Contributing to feature development, bug fixing, and implementing best practices in software development workflows.",
       gradient: "from-green-500 to-teal-500",
     },
     {
-      icon: "🤖",
-      title: "Machine Learning",
+      icon: "📊",
+      title: "Junior Data Analyst",
       description:
-        "Implementing AI-driven solutions and intelligent applications.",
+        "Analyzing basic datasets to extract insights using tools like Excel, Python, or Google Data Studio.",
       gradient: "from-orange-500 to-red-500",
     },
+
   ];
 
   /** Trigger animation when section enters viewport */
@@ -93,9 +94,8 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <header
-          className={`text-center mb-20 transition-all duration-1000 ${
-            isVisible ? "animate-fade-in" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-center mb-20 transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0 translate-y-10"
+            }`}
         >
           <div className="relative inline-block">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -114,9 +114,8 @@ export function AboutSection() {
 
         {/* Stats Section */}
         <div
-          className={`grid grid-cols-2 lg:grid-cols-4 gap-8 mb-24 transition-all duration-1000 delay-300 ${
-            isVisible ? "animate-fade-in" : "opacity-0 translate-y-10"
-          }`}
+          className={`grid grid-cols-2 lg:grid-cols-4 gap-8 mb-24 transition-all duration-1000 delay-300 ${isVisible ? "animate-fade-in" : "opacity-0 translate-y-10"
+            }`}
         >
           {stats.map((stat, index) => (
             <article
@@ -146,9 +145,8 @@ export function AboutSection() {
 
         {/* Expertise Section */}
         <div
-          className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-1000 delay-500 ${
-            isVisible ? "animate-fade-in" : "opacity-0 translate-y-10"
-          }`}
+          className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-1000 delay-500 ${isVisible ? "animate-fade-in" : "opacity-0 translate-y-10"
+            }`}
         >
           {expertise.map((item, index) => (
             <article
