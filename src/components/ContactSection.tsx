@@ -27,24 +27,24 @@ export function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "dhanasekarmurgesan@gmail.com",
-      href: "mailto:dhanasekarmurgesan@gmail.com",
+      value: "nicholaskentx@gmail.com",
+      href: "mailto:nicholaskentx@gmail.com",
       color: "bg-blue-700",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Trichy, India",
+      value: "Bandung, Indonesia",
       href: "#",
       color: "bg-purple-700",
     },
   ];
 
   const socials = [
-    { icon: Github, href: "https://github.com/Dhanas3kar", label: "GitHub" },
+    { icon: Github, href: "https://github.com/Nichonamo", label: "GitHub" },
     {
       icon: Linkedin,
-      href: "https://www.linkedin.com/in/dhanasekar-murugesan-a9321731a/",
+      href: "https://www.linkedin.com/in/nicholaskentx/",
       label: "LinkedIn",
     },
   ];
@@ -118,7 +118,7 @@ export function ContactSection() {
           Let's Connect
         </h1>
         <p className="text-center text-blue-100/80 text-lg mb-12 max-w-2xl">
-          Ready to collaborate on AI, research and innovation? Let's discuss how we can build the future together.
+          Ready to collaborate ? You can send me your contact information bellow.
         </p>
 
         <div className="flex flex-col md:flex-row gap-8 w-full justify-center">

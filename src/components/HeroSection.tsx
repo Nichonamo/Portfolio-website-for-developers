@@ -76,7 +76,7 @@ export function AnimatedToolkits() {
 export default function HeroSection() {
   const [text, setText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "Full-Stack Dev | ML Innovator | UI Astronaut";
+  const fullText = "Front-End Dev | BINUS CS Student";
   const heroRef = useRef<HTMLDivElement>(null);
   const stars = useStars(120);
 
@@ -145,7 +145,7 @@ export default function HeroSection() {
         <div className="space-y-8">
           <h5 className="text-4xl md:text-5xl font-bold text-white">Hi, I'm</h5>
           <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent animate-pulse">
-            Dhanasekar
+            Nicholas Kent
           </h1>
           <p className="text-xl text-cyan-300 font-light tracking-wider">
             {text}
@@ -155,11 +155,10 @@ export default function HeroSection() {
           </p>
           <div className="flex items-center space-x-3">
             <div className="w-3 h-3 bg-gradient-to-r from-orange-400 to-red-500 rounded-full animate-pulse" />
-            <p className="text-lg text-gray-300">Trichy, India</p>
+            <p className="text-lg text-gray-300">Bandung, Indonesia</p>
           </div>
           <p className="text-base text-gray-300 leading-relaxed max-w-lg">
-            I build immersive, intelligent web systems using React, Golang, PostgreSQL, and Python.
-            From cosmic interfaces to machine learning galaxies — I orbit around creativity and impact.
+            Crafting seamless interfaces with React, JavaScript, and CSS—driven to turn pixel-perfect designs into real experiences that empower users and communities. Always exploring new creative boundaries.
           </p>
           <div className="flex gap-4">
             <button className="bg-gradient-to-r from-cyan-500 to-purple-500 px-6 py-3 text-white rounded-lg hover:scale-105 transition-transform">

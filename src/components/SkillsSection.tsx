@@ -16,32 +16,26 @@ function generateStarField(starCount = 80) {
 }
 
 export function SkillsSection() {
-  const skillCategories = [
+  // Hapus atau komentari bagian backend agar tidak tampil
+  // const backendCategory = {...}
+
+  const frontendAndTools = [
     {
       category: 'Frontend',
       skills: [
         { name: 'React/Next.js', proficiency: 95 },
         { name: 'TypeScript', proficiency: 90 },
-        { name: 'Three.js/WebGL', proficiency: 85 },
-        { name: 'Tailwind CSS', proficiency: 92 },
-      ],
-    },
-    {
-      category: 'Backend',
-      skills: [
-        { name: 'Node.js', proficiency: 88 },
-        { name: 'Python', proficiency: 85 },
-        { name: 'PostgreSQL', proficiency: 82 },
-        { name: 'GraphQL', proficiency: 78 },
+        { name: 'Html CSS', proficiency: 85 },
+        { name: 'Tailwind CSS', proficiency: 90 },
       ],
     },
     {
       category: 'Tools & Technologies',
       skills: [
         { name: 'Git/GitHub', proficiency: 92 },
-        { name: 'Docker', proficiency: 85 },
-        { name: 'AWS', proficiency: 80 },
-        { name: 'Figma', proficiency: 75 },
+        { name: 'ESLint', proficiency: 80 },
+        { name: 'Figma', proficiency: 70 },
+        { name: 'Dev Tools', proficiency: 85 },
       ],
     },
   ];
@@ -96,6 +90,7 @@ export function SkillsSection() {
         `,
       }}
     >
+      {/* Star field dan elemen latar belakang lainnya */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {stars.map((star, index) => (
           <div
@@ -113,23 +108,35 @@ export function SkillsSection() {
           />
         ))}
       </div>
+
       <div className="absolute z-0 pointer-events-none">
         <div className="absolute left-[30%] top-[10%] w-96 h-96 bg-purple-900 opacity-10 rounded-full blur-3xl" />
         <div className="absolute right-[15%] bottom-[10%] w-72 h-72 bg-blue-900 opacity-10 rounded-full blur-2xl" />
         <div className="absolute left-[60%] bottom-[20%] w-60 h-60 bg-pink-900 opacity-10 rounded-full blur-2xl" />
       </div>
+
+      {/* Konten utama */}
       <div ref={sectionRef} className="relative z-10 w-full max-w-7xl px-6 py-20">
+        {/* Judul dan deskripsi */}
         <header className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wide" style={{ fontFamily: 'monospace' }}>
+          <h2
+            className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wide"
+            style={{ fontFamily: 'monospace' }}
+          >
             Internships & Experience
           </h2>
-          <p className="text-gray-400 text-lg">Technical skills and professional experience across various domains</p>
+          <p className="text-gray-400 text-lg">
+            Technical skills and professional experience across various domains
+          </p>
         </header>
-        <div className="grid md:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
+
+        {/* Bagian skills tanpa kategori backend */}
+        {/* Menggunakan flex box, hanya frontend dan tools yang muncul */}
+        <div className="flex flex-col md:flex-row md:justify-center gap-8">
+          {frontendAndTools.map((category, categoryIndex) => (
             <div
               key={category.category}
-              className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 shadow-lg"
+              className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 shadow-lg md:flex-1"
               style={{ boxShadow: '0 4px 48px rgba(40, 40, 80, 0.4)' }}
             >
               <h3 className="text-xl font-bold text-white mb-6 text-center">{category.category}</h3>
@@ -155,6 +162,8 @@ export function SkillsSection() {
             </div>
           ))}
         </div>
+
+        {/* Riwayat pengalaman */}
         <section className="mt-20">
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Professional Experience</h3>
           <div className="relative space-y-6 before:absolute before:left-2.5 before:top-0 before:bottom-0 before:w-1 before:bg-gradient-to-b before:from-blue-700/30 before:to-purple-700/10 before:rounded-full before:z-0">
@@ -176,6 +185,7 @@ export function SkillsSection() {
           </div>
         </section>
       </div>
+
       <style jsx>{`
         @keyframes starTwinkle {
           0% {
