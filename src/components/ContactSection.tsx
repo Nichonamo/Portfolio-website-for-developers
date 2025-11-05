@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Mail, MapPin, Github, Linkedin } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 function useStars(count = 120) {
   return useMemo(
@@ -54,22 +55,62 @@ export function ContactSection() {
     setError("");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setSubmitted(false);
 
+    // Validation
     if (!form.name || !form.email || !form.message) {
       setError("Please fill in all fields.");
       return;
     }
 
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
     setLoading(true);
-    setTimeout(() => {
+
+    try {
+      // ⚠️ REPLACE WITH YOUR EMAILJS CREDENTIALS
+      const SERVICE_ID = 'service_u6url0q';
+      const TEMPLATE_ID = 'template_lhqyxhr';
+      const PUBLIC_KEY = 'apo3Q3wWL4MAzQtZU';
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+          to_name: 'Nicholas Kent',
+          to_email: 'nicholaskentx@gmail.com',
+        },
+        PUBLIC_KEY
+      );
+
+      console.log('Email sent successfully:', result);
+      
       setLoading(false);
       setSubmitted(true);
       setForm({ name: "", email: "", message: "" });
-    }, 1500);
+
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+
+    } catch (error) {
+      console.error('Email send error:', error);
+      setLoading(false);
+      setError("Failed to send message. Please try again or email me directly.");
+    }
   };
 
   return (
@@ -142,7 +183,7 @@ export function ContactSection() {
               <div className="text-blue-200 text-sm mb-2">Follow my journey</div>
               <div className="flex gap-3">
                 {socials.map((s, i) => (
-                  <a key={i} href={s.href} aria-label={s.label}
+                  <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                      className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-500/30 transition-colors">
                     <s.icon className="w-5 h-5 text-blue-200 group-hover:text-white transition" />
                   </a>
@@ -157,21 +198,64 @@ export function ContactSection() {
               Send a Message
             </h2>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <input type="text" name="name" value={form.name} onChange={handleChange}
+              <input 
+                type="text" 
+                name="name" 
+                value={form.name} 
+                onChange={handleChange}
                 placeholder="Your Name"
-                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-blue-100 placeholder-blue-300 focus:outline-none focus:border-blue-400" />
-              <input type="email" name="email" value={form.email} onChange={handleChange}
+                disabled={loading}
+                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-blue-100 placeholder-blue-300 focus:outline-none focus:border-blue-400 disabled:opacity-50 disabled:cursor-not-allowed" 
+              />
+              <input 
+                type="email" 
+                name="email" 
+                value={form.email} 
+                onChange={handleChange}
                 placeholder="Your Email"
-                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-blue-100 placeholder-blue-300 focus:outline-none focus:border-blue-400" />
-              <textarea name="message" value={form.message} onChange={handleChange}
-                placeholder="Your Message" rows={4}
-                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-blue-100 placeholder-blue-300 focus:outline-none focus:border-blue-400 resize-none" />
-              {error && <div className="text-red-400 text-sm">{error}</div>}
-              {submitted && <div className="text-green-400 text-sm">Thank you! Your message has been sent.</div>}
-              <button type="submit" disabled={loading}
-                className="mt-2 w-full py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-700 via-purple-700 to-pink-700 text-white flex items-center justify-center gap-2 shadow-lg hover:from-blue-800 hover:to-purple-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                disabled={loading}
+                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-blue-100 placeholder-blue-300 focus:outline-none focus:border-blue-400 disabled:opacity-50 disabled:cursor-not-allowed" 
+              />
+              <textarea 
+                name="message" 
+                value={form.message} 
+                onChange={handleChange}
+                placeholder="Your Message" 
+                rows={4}
+                disabled={loading}
+                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-blue-100 placeholder-blue-300 focus:outline-none focus:border-blue-400 resize-none disabled:opacity-50 disabled:cursor-not-allowed" 
+              />
+              
+              {error && (
+                <div className="bg-red-500/10 border border-red-500/50 rounded-lg px-4 py-2 text-red-400 text-sm flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                  {error}
+                </div>
+              )}
+              
+              {submitted && (
+                <div className="bg-green-500/10 border border-green-500/50 rounded-lg px-4 py-2 text-green-400 text-sm flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Thank you! Your message has been sent successfully.
+                </div>
+              )}
+              
+              <button 
+                type="submit" 
+                disabled={loading}
+                className="mt-2 w-full py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-700 via-purple-700 to-pink-700 text-white flex items-center justify-center gap-2 shadow-lg hover:from-blue-800 hover:to-purple-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
                 <span>{loading ? "Sending..." : "Send Message"}</span>
-                {!loading && (
+                {loading ? (
+                  <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                ) : (
                   <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                     <path d="M22 2L11 13" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M22 2L15 22L11 13L2 9L22 2Z" strokeLinecap="round" strokeLinejoin="round" />
